@@ -5,7 +5,7 @@ Plugin Name: Twitcasting Status
 Plugin URI: http://katzueno.com/wordpress/twitcasting-status/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TYQTWQ7QGN36J
 Description: Display the online/offline status of a Twitcasting channel.
-Version: 1.0.0
+Version: 1.0.1
 Author: Katz Ueno
 Author URI: http://katzueno.com/
 Tags: livecasting, status, twitcasting, twitter, facebook
