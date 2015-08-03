@@ -122,6 +122,7 @@ If you're still having problem getting the status, you can think of the followin
 
 * Added the support multiple accounts to display their status.
 * Added the support for shortcode.
+* Tested up to Version 4.3
 
 = 1.0.1 =
 
