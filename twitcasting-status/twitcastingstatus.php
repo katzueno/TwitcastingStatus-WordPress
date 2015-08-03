@@ -5,7 +5,7 @@ Plugin Name: Twitcasting Status
 Plugin URI: http://katzueno.com/wordpress/twitcasting-status/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TYQTWQ7QGN36J
 Description: Display the online/offline status of a Twitcasting channel.
-Version: 1.0.0
+Version: 2.0.0
 Author: Katz Ueno
 Author URI: http://katzueno.com/
 Tags: livecasting, status, twitcasting, twitter, facebook
@@ -133,9 +133,9 @@ class wp_twitcasting_status_widget extends WP_Widget {
 // [twitcasting-status account='http://twitcasting.tv/yokosonews' online='online image URL' offline='offline image URL']
 // ============================================================
 function twitcasting_status_shortcode($atts) {
-    $account = esc_html($instance['account']);
-    $online = esc_url($instance['online']);
-    $offline = esc_url($instance['offline']);
+	$account = preg_replace("#^.*/([^/]+)/?$#",'${1}',$atts['account']);
+    $online = esc_url($atts['online']);
+    $offline = esc_url($atts['offline']);
     // ==============================
     // Twitcasting Status starts here
     // ==============================
