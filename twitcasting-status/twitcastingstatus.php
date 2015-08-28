@@ -5,7 +5,7 @@ Plugin Name: Twitcasting Status
 Plugin URI: http://katzueno.com/wordpress/twitcasting-status/
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TYQTWQ7QGN36J
 Description: Display the online/offline status of a Twitcasting channel.
-Version: 2.0.0
+Version: 2.0.1
 Author: Katz Ueno
 Author URI: http://katzueno.com/
 Tags: livecasting, status, twitcasting, twitter, facebook
@@ -156,20 +156,31 @@ function twitcasting_status_shortcode($atts) {
     if (function_exists(json_decode)) {
         if ($TwitcastingStatusSerial->{'islive'}) {
             // If live
-            ?>
-            <a href="http://twitcasting.tv/<?php echo $account;?>" alt="<?php _e('Click here to visit the Twitcasting page'); ?>" target="_blank">
-            <img src="<?php echo $online; ?>" alt="<?php _e('Live now'); ?>" target="_blank" />
-            </a>
-        <?php } else {
+            $output = '<a href="http://twitcasting.tv/';
+            $output .= $account;
+            $output .= '" alt="';
+            $output .= __('Click here to visit the Twitcasting page');
+            $output .= '" target="_blank"><img src="';
+            $output .= $online;
+            $output .= '" alt="';
+            $output .= __('Live now');
+            $output .= '" target="_blank" /></a>';
+        } else {
             // If not live, including when the API does not respond
-            ?>
-            <a href="http://twitcasting.tv/<?php echo $account;?>" alt="<?php _e('Click here to visit the Twitcasting page'); ?>" target="_blank">
-            <img src="<?php echo $offline; ?>" alt="<?php _e('Offline'); ?>" />
-            </a>
-            <?php }
+            $output = '<a href="http://twitcasting.tv/';
+            $output .= $account;
+            $output .= '" alt="';
+            $output .= __('Click here to visit the Twitcasting page');
+            $output .= '" target="_blank"><img src="';
+            $output .= $offline;
+            $output .= '" alt="';
+            $output .= __('Offline');
+            $output .= '" /></a>';
+        }
     } else {
-        echo _e('There is no JSON support on your server. Please contact your administrator.');
+        $output = __('There is no JSON support on your server. Please contact your administrator.');
     }
+    return $output;
     // ==============================
     // Twitcasting Status ends here
     // ==============================
