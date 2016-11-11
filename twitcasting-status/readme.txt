@@ -9,7 +9,7 @@ Tags: livecasting, status, twitcasting, twitter, facebook
 License: GPL2
 Requires at least: 2.8.0
 Tested up to: 4.6.0
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 
 Display the online/offline status of a Twitcasting channel.
 
@@ -118,6 +118,10 @@ If you're still having problem getting the status, you can think of the followin
 
 == Changelog ==
 
+= 2.0.2 =
+
+* Support translation.
+
 = 2.0.1 =
 
 * Fix shortcode output.
@@ -143,6 +147,14 @@ If you're still having problem getting the status, you can think of the followin
 * The initial version. This is in beta but it should work ok.
 
 == Upgrade Notice ==
+
+= 2.0.2 =
+
+* Support translation.
+
+= 2.0.1 =
+
+* Fix shortcode output.
 
 = 2.0.0 =
 
